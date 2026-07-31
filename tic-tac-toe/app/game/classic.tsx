@@ -28,6 +28,7 @@ export default function ClassicGame() {
     aiPlayer,
     makeMove,
     resetGame,
+    resetScores,
     setVsAI,
     setDifficulty,
     setGridSize,
@@ -60,6 +61,7 @@ export default function ClassicGame() {
   };
 
   const handleResetScores = () => {
+    resetScores();
     playSound('click');
   };
 

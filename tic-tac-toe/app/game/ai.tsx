@@ -30,6 +30,7 @@ export default function AIGame() {
     aiPlayer,
     makeMove,
     resetGame,
+    resetScores,
     setVsAI,
     setDifficulty,
     setAiPlayer,
@@ -65,6 +66,7 @@ export default function AIGame() {
   };
 
   const handleResetScores = () => {
+    resetScores();
     playSound('click');
   };
 

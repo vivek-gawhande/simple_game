@@ -23,6 +23,8 @@ export default function HomeScreen() {
 
   const { width } = Dimensions.get('window');
   const buttonWidth = Math.min(width - 40, 320);
+  const titleFontSize = Math.max(14, Math.min(28, Math.floor((width - 40) / 11)));
+  const titleLetterSpacing = titleFontSize > 20 ? 6 : titleFontSize > 16 ? 3 : 1;
 
   return (
     <View style={[styles.container, { backgroundColor: colors.bg }]}>
@@ -30,7 +32,19 @@ export default function HomeScreen() {
 
       <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
         <View style={styles.header}>
-          <Text style={[styles.title, { color: colors.fg }]}>TIC TAC TOE</Text>
+          <Text
+            style={[
+              styles.title,
+              {
+                color: colors.fg,
+                fontSize: titleFontSize,
+                letterSpacing: titleLetterSpacing,
+                lineHeight: titleFontSize * 1.4,
+              },
+            ]}
+          >
+            TIC TAC TOE
+          </Text>
           <Text style={[styles.subtitle, { color: colors.fgDim }]}>RETRO EDITION</Text>
         </View>
 
@@ -100,7 +114,7 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
   },
   content: {
-    flex: 1,
+    flexGrow: 1,
     justifyContent: 'center',
     gap: 24,
   },
@@ -115,11 +129,11 @@ const styles = StyleSheet.create({
   header: {
     alignItems: 'center',
     marginBottom: 10,
+    width: '100%',
   },
   title: {
     fontFamily: 'PressStart2P-Regular',
-    fontSize: 28,
-    letterSpacing: 6,
+    width: '100%',
     textTransform: 'uppercase',
     textAlign: 'center',
     textShadowColor: '#00ff88',

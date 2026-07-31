@@ -28,6 +28,7 @@ export default function Grid4x4Game() {
     aiPlayer,
     makeMove,
     resetGame,
+    resetScores,
     setVsAI,
     setDifficulty,
     setGridSize,
@@ -60,6 +61,7 @@ export default function Grid4x4Game() {
   };
 
   const handleResetScores = () => {
+    resetScores();
     playSound('click');
   };
 
