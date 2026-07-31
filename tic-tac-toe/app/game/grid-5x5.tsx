@@ -28,6 +28,7 @@ export default function Grid5x5Game() {
     aiPlayer,
     makeMove,
     resetGame,
+    resetScores,
     setVsAI,
     setDifficulty,
     setGridSize,
@@ -60,6 +61,7 @@ export default function Grid5x5Game() {
   };
 
   const handleResetScores = () => {
+    resetScores();
     playSound('click');
   };
 
